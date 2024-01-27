@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemMono : MonoBehaviour
@@ -18,6 +19,6 @@ public class ItemMono : MonoBehaviour
     {
         string result;
         if(Item.Combine(item.Item.Name, out result))
-        GameManager.instance.CreateItem(result);
+        GameManager.instance.CreateItem(result, transform.parent);
     }
 }

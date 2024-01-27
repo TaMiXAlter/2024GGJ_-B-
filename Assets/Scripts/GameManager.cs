@@ -34,10 +34,10 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public GameObject CreateItem(string itemName)
+    public GameObject CreateItem(string itemName, Transform parent)
     {
         if(itemName == null) return null;
-        var obj = Instantiate<ItemMono>(prefab);
+        var obj = Instantiate<ItemMono>(prefab, parent);
         obj.name = itemName;
         _itemPrefab.TryGetValue(itemName, out obj.Item);
         obj.gameObject.GetComponent<Image>().sprite = obj.Item.Texture;
