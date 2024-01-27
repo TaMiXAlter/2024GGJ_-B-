@@ -18,13 +18,15 @@ public class Movable : MonoBehaviour, IPointerDownHandler
 
     IEnumerator Move()
     {
-        Vector3 offset = transform.position - Input.mousePosition;
-        transform.position = Input.mousePosition + offset;
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 offset = transform.position - mousePos;
+        transform.position = mousePos + offset;
         yield return null;
 
         while (!Input.GetKeyUp(KeyCode.Mouse0))
         {
-            transform.position = Input.mousePosition + offset;
+            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = mousePos + offset;
             yield return null;
         }
     }
