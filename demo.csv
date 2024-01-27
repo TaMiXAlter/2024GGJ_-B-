@@ -1,0 +1,6 @@
+Name,bread,tomato,pizza,pineapple,ltalian
+bread,,pizza,,,
+tomato,pizza,,,,
+pizza,,,,ltalian,
+pineapple,,,ltalian,,
+ltalian,,,,,

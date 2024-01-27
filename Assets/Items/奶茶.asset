@@ -1,33 +1,31 @@
-
-    %YAML 1.1
-    %TAG !u! tag:unity3d.com,2011:
-    --- !u!114 &11400000
-    MonoBehaviour:
-    m_ObjectHideFlags: 0
-    m_CorrespondingSourceObject: { fileID: 0}
-    m_PrefabInstance: {fileID: 0}
-    m_PrefabAsset: {fileID: 0}
-    m_GameObject: {fileID: 0}
-    m_Enabled: 1
-    m_EditorHideFlags: 0
-    m_Script: {fileID: 11500000, guid: 2c4c12063bda91247a9644ded558bfb5, type: 3}
-    m_Name: NewItem
-    m_EditorClassIdentifier: 
-    Texture: {fileID: 0}
-    Name: 奶茶
-    Combinations:
-        m_keys: 
-		- 奶茶
-		- 珍珠
-		- 火鍋
-		- 咖啡
-		- 布丁
-		- 印度烤餅
-        m_values: 
-		- 兩杯奶茶
-		- 珍珠奶茶
-		- 很多料的那種仙草
-		- 絲襪奶茶
-		- 布丁奶茶
-		- 印度拉茶
-    
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4c12063bda91247a9644ded558bfb5, type: 3}
+  m_Name: "\u5976\u8336"
+  m_EditorClassIdentifier: 
+  Texture: {fileID: 21300000, guid: d72a88a36738732419e9f4458c25c33f, type: 3}
+  Name: "\u5976\u8336"
+  Combinations:
+    m_keys:
+    - "\u5976\u8336"
+    - "\u73CD\u73E0"
+    - "\u706B\u934B"
+    - "\u5496\u5561"
+    - "\u5E03\u4E01"
+    - "\u5370\u5EA6\u70E4\u9905"
+    m_values:
+    - "\u5169\u676F\u5976\u8336"
+    - "\u73CD\u73E0\u5976\u8336"
+    - "\u5F88\u591A\u6599\u7684\u90A3\u7A2E\u4ED9\u8349"
+    - "\u7D72\u896A\u5976\u8336"
+    - "\u5E03\u4E01\u5976\u8336"
+    - "\u5370\u5EA6\u62C9\u8336"
