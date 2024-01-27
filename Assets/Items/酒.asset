@@ -1,0 +1,29 @@
+
+    %YAML 1.1
+    %TAG !u! tag:unity3d.com,2011:
+    --- !u!114 &11400000
+    MonoBehaviour:
+    m_ObjectHideFlags: 0
+    m_CorrespondingSourceObject: { fileID: 0}
+    m_PrefabInstance: {fileID: 0}
+    m_PrefabAsset: {fileID: 0}
+    m_GameObject: {fileID: 0}
+    m_Enabled: 1
+    m_EditorHideFlags: 0
+    m_Script: {fileID: 11500000, guid: 2c4c12063bda91247a9644ded558bfb5, type: 3}
+    m_Name: NewItem
+    m_EditorClassIdentifier: 
+    Texture: {fileID: 0}
+    Name: 酒
+    Combinations:
+        m_keys: 
+		- 醬油
+		- 起司
+		- 烤肉
+		- 雞腿
+        m_values: 
+		- 清酒
+		- 紅酒
+		- 啤酒
+		- 麻油雞
+    
