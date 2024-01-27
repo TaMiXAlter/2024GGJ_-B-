@@ -2,23 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ItemMono : MonoBehaviour
+public class ItemMono : MonoBehaviour, IPointerDownHandler
 {
     public Item Item;
-    void Start()
+
+    public void OnPointerDown(PointerEventData eventData)
     {
-        
+        GameManager.instance.CreateOnContainer(Item.Name);
     }
 
-    void Update()
-    {
-        
-    }
     public void TryCombine(ItemMono item)
     {
         string result;
         if(Item.Combine(item.Item.Name, out result))
-        GameManager.instance.CreateItem(result, transform.parent);
+        GameManager.instance.CreateOnField(result);
     }
 }
