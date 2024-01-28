@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c4c12063bda91247a9644ded558bfb5, type: 3}
-  m_Name: ggj
+  m_Name: butter
   m_EditorClassIdentifier: 
-  Texture: {fileID: 21300000, guid: 26371d92871aeb146bf73ee97587c890, type: 3}
-  Name: ggj
+  Texture: {fileID: 21300000, guid: da1e565269b72fb478d611c04c7c6a8f, type: 3}
+  Name: butter
   Combinations:
     m_keys: 
+    - bread
     m_values: 
+    - polo
     

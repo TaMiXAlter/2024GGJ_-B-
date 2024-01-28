@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c4c12063bda91247a9644ded558bfb5, type: 3}
-  m_Name: ggj
+  m_Name: tofu
   m_EditorClassIdentifier: 
-  Texture: {fileID: 21300000, guid: 26371d92871aeb146bf73ee97587c890, type: 3}
-  Name: ggj
+  Texture: {fileID: 21300000, guid: 16aa4eff0bafaab4b8e8c48a405a2718, type: 3}
+  Name: tofu
   Combinations:
     m_keys: 
+    - blood
+    - hotpot
     m_values: 
+    - hotpot
+    - spicy hotpot
     

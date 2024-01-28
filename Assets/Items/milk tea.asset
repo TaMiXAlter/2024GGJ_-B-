@@ -10,11 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c4c12063bda91247a9644ded558bfb5, type: 3}
-  m_Name: ggj
+  m_Name: milk tea
   m_EditorClassIdentifier: 
-  Texture: {fileID: 21300000, guid: 26371d92871aeb146bf73ee97587c890, type: 3}
-  Name: ggj
+  Texture: {fileID: 21300000, guid: 5623cc30beaf3cb4aad0bbdd4e34cd04, type: 3}
+  Name: milk tea
   Combinations:
     m_keys: 
+    - pearls
+    - coffee
+    - indian cakes
     m_values: 
+    - pearl milk tea
+    - stockings milk tea
+    - indian tea
     

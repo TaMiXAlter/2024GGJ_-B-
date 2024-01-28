@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c4c12063bda91247a9644ded558bfb5, type: 3}
-  m_Name: ggj
+  m_Name: blood
   m_EditorClassIdentifier: 
-  Texture: {fileID: 21300000, guid: 26371d92871aeb146bf73ee97587c890, type: 3}
-  Name: ggj
+  Texture: {fileID: 21300000, guid: e657a2ea6a32e544d993b85b1a2ad2d0, type: 3}
+  Name: blood
   Combinations:
     m_keys: 
+    - tofu
+    - rice
     m_values: 
+    - hotpot
+    - pig blood pastry
     
