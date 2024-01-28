@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public GameObject draggedItem;
+    [SerializeField]
+    private GameObject ItemParent;
 
     //Private
     StringItemDictionary _itemPrefab = new StringItemDictionary();
@@ -146,6 +148,11 @@ public class GameManager : MonoBehaviour
         {
             var selection = CreateOnContainer(_playerHadItme[_createdCount]);
             selection.GetComponent<ItemMono>().IsSelected = true;
+        }
+    }
+    public void DeleteAllItem(){
+        foreach (Transform child in ItemParent.transform){
+            Destroy(child.gameObject);
         }
     }
 }
