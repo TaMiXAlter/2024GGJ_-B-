@@ -51,6 +51,5 @@ public class AudioSystem : MonoBehaviour
     {
         if(!_soundEffectMusic.ContainsKey(key)) return;
         _soundEffectPlayer.PlayOneShot(_soundEffectMusic[key]);
-        print(key);
     }
 }
