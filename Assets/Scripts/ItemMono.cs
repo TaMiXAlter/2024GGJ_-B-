@@ -34,6 +34,7 @@ public class ItemMono : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             );
             if (hits.Any(x => x.collider.gameObject.name == "Panel"))
             {
+                GameManager.instance.draggedItem = null;
                 Destroy(gameObject);
             }
         }
