@@ -28,6 +28,7 @@ public class AudioSystem : MonoBehaviour
 
         _backGroundPlayer.loop = true;
         _backGroundPlayer.playOnAwake = false;
+        _backGroundPlayer.volume = 90;
 
         _soundEffectPlayer.playOnAwake = false;
     }
@@ -36,9 +37,6 @@ public class AudioSystem : MonoBehaviour
     {
         if(instance == null)
             instance = this;
-        
-        
-
         
         PlayBackGroundMusic();  
     }

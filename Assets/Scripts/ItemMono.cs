@@ -13,6 +13,7 @@ public class ItemMono : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        AudioSystem.instance.PlaySoundEffect("take");
         if (IsSelected)
         {
             GameManager.instance.CreateFromSelection(Item.Name);
@@ -21,13 +22,15 @@ public class ItemMono : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             GameManager.instance.BeginDrag(gameObject);
         }
-        AudioSystem.instance.PlaySoundEffect("take");
+        
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        
         if (!IsSelected)
         {
+            AudioSystem.instance.PlaySoundEffect("drop");
             // Delete if drop on panel
             RaycastHit2D[] hits = Physics2D.RaycastAll(
                 Camera.main.ScreenToWorldPoint(Input.mousePosition),
@@ -37,10 +40,6 @@ public class ItemMono : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             {
                 GameManager.instance.draggedItem = null;
                 Destroy(gameObject);
-            }
-            else
-            {
-                AudioSystem.instance.PlaySoundEffect("drop");
             }
         }
     }

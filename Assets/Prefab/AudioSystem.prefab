@@ -158,8 +158,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4961676075026967427}
   - {fileID: 4819942983582164036}
+  - {fileID: 4961676075026967427}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &600252972560804042
@@ -174,7 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fa0bd2f6dac6f4582a04b41338a0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _backGroundMusic: {fileID: 8300000, guid: db2e9b4482f3b2f4a9f40b133bbe74ef, type: 3}
 --- !u!1 &6221408833444746131
 GameObject:
   m_ObjectHideFlags: 0
