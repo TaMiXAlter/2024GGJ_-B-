@@ -102,7 +102,11 @@ public class GameManager : MonoBehaviour
 
     public List<string> GetAllPlayerHadItem() { return  _playerHadItme; }
 
-    public GameObject CreateOnField(string itemName) { return CreateItem(itemName, fieldRoot.transform); }
+    public GameObject CreateOnField(string itemName) { 
+        GameObject g = CreateItem(itemName, fieldRoot.transform); 
+        g.transform.localScale = new Vector3(1.5f, 1.5f, 1);
+        return g;
+    }
     public GameObject CreateOnContainer(string itemName) { return CreateItem(itemName, containerRoot.transform); }
     private GameObject CreateItem(string itemName, Transform parent)
     {
