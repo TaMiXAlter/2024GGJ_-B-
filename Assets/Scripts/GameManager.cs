@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     List<string> _playerHadItme = new List<string>();
     int _createdCount = 0;
 
+    List<string> _initialItem = new List<string> { "cilantro", "fungus", "kimchi", "sashimi", "tomatoes", "blood", "soy sauce", "butter", "cheese", "red meat", "milk tea", "stinky tofu", "curry", "bread", "coke", "alcohol", "rice", "tofu", "noodles", "vinegar rice", "coffee", "pearls", "pineapple" };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,8 +38,13 @@ public class GameManager : MonoBehaviour
             _itemPrefab.Add(item.Name, item);
         }
 
+
         //Init _playerHadItme, have basic elemental
-        _playerHadItme.Add("奶茶");
+        foreach (var item in _initialItem)
+        {
+            _playerHadItme.Add(item);
+        }
+
 
         ReCreateAllHadItem();
     }
