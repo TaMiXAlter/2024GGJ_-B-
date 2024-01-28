@@ -19,10 +19,23 @@ public class GameManager : MonoBehaviour
 
     //Private
     StringItemDictionary _itemPrefab = new StringItemDictionary();
-    List<string> _playerHadItme = new List<string>();
+    List<string> _playerHadItem = new List<string>();
+    List<string> _initialItem;
     int _createdCount = 0;
 
-    List<string> _initialItem = new List<string> { "cilantro", "fungus", "kimchi", "sashimi", "tomatoes", "blood", "soy sauce", "butter", "cheese", "red meat", "milk tea", "stinky tofu", "curry", "bread", "coke", "alcohol", "rice", "tofu", "noodles", "vinegar rice", "coffee", "pearls", "pineapple" };
+    // read init_list.txt to _initialItem
+    void ReadInitList()
+    {
+        _initialItem = new List<string>();
+        TextAsset initList = Resources.Load<TextAsset>("init_list");
+        string[] lines = initList.text.Split(' ');
+        foreach (string line in lines)
+        {
+            _initialItem.Add(line);
+        }
+        
+        Debug.Log(initList);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +43,7 @@ public class GameManager : MonoBehaviour
         if(instance == null)
             instance = this;
 
+        ReadInitList();
 
         var items = Resources.LoadAll<Item>("Item");
 
@@ -39,10 +53,10 @@ public class GameManager : MonoBehaviour
         }
 
 
-        //Init _playerHadItme, have basic elemental
+        //Init _playerHadItem, have basic elemental
         foreach (var item in _initialItem)
         {
-            _playerHadItme.Add(item);
+            _playerHadItem.Add(item);
         }
 
 
@@ -98,15 +112,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public List<string> GetAllPlayerHadItem() { return  _playerHadItme; }
+    public List<string> GetAllPlayerHadItem() { return  _playerHadItem; }
 
     public GameObject CreateOnField(string itemName) { return CreateItem(itemName, fieldRoot.transform); }
     public GameObject CreateOnContainer(string itemName) { return CreateItem(itemName, containerRoot.transform); }
     private GameObject CreateItem(string itemName, Transform parent)
     {
         if(itemName == null) return null;
-        if(!_playerHadItme.Contains(itemName))
-            _playerHadItme.Add(itemName);
+        if(!_playerHadItem.Contains(itemName))
+            _playerHadItem.Add(itemName);
 
         var obj = Instantiate<ItemMono>(prefab, parent);
         obj.name = itemName;
@@ -142,9 +156,9 @@ public class GameManager : MonoBehaviour
 
     private void ReCreateAllHadItem()
     {
-        for(; _createdCount < _playerHadItme.Count; _createdCount++)
+        for(; _createdCount < _playerHadItem.Count; _createdCount++)
         {
-            var selection = CreateOnContainer(_playerHadItme[_createdCount]);
+            var selection = CreateOnContainer(_playerHadItem[_createdCount]);
             selection.GetComponent<ItemMono>().IsSelected = true;
         }
     }
