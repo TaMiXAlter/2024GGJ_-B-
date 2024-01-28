@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class StringItemDictionary : SerializableDictionary<string, Item> { }
@@ -60,7 +61,27 @@ public class GameManager : MonoBehaviour
         {
             if(draggedItem != null)
             {
-                draggedItem.GetComponent<Image>().raycastTarget = true;
+                //Overlap Detect
+                Vector2 orig = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                var hits = Physics2D.RaycastAll(orig, Vector2.zero);
+                foreach(var hit in hits)
+                {
+                    var hitname = hit.transform.GetComponent<ItemMono>().Item.Name;
+                    string result;
+                    if (draggedItem.GetComponent<ItemMono>().Item.Combine(hitname, out result))
+                    {
+                        Vector2 middle = (draggedItem.transform.position + hit.transform.position) / 2;
+                        var newItem = CreateOnField(result);
+                        newItem.transform.position = middle;
+
+                        Destroy(draggedItem);
+                        Destroy(hit.transform.gameObject);
+                        Debug.Log("Combine: " + result);
+                        
+                    }
+                }
+                if(draggedItem != null)
+                    draggedItem.GetComponent<BoxCollider2D>().enabled = true;
                 draggedItem = null;
             }
         }
@@ -87,13 +108,15 @@ public class GameManager : MonoBehaviour
     {
         var newDrag = CreateOnField(itemName);
         newDrag.GetComponent<ItemMono>().IsSelected = false;
-        newDrag.GetComponent<Image>().raycastTarget = false;
+        //newDrag.GetComponent<Image>().raycastTarget = false;
+        newDrag.GetComponent<BoxCollider2D>().enabled = false;
         draggedItem = newDrag;
     }
 
     public void BeginDrag(GameObject itemObj)
     {
-        itemObj.GetComponent<Image>().raycastTarget = false;
+        //itemObj.GetComponent<Image>().raycastTarget = false;
+        itemObj.GetComponent<BoxCollider2D>().enabled = false;
         itemObj.transform.SetSiblingIndex(itemObj.transform.parent.childCount - 1);
         draggedItem = itemObj;
 
