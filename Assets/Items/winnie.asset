@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c4c12063bda91247a9644ded558bfb5, type: 3}
-  m_Name: ggj
+  m_Name: winnie
   m_EditorClassIdentifier: 
-  Texture: {fileID: 21300000, guid: 26371d92871aeb146bf73ee97587c890, type: 3}
-  Name: ggj
+  Texture: {fileID: 21300000, guid: f337fe1559eae1c429d4163406ed7cfb, type: 3}
+  Name: winnie
   Combinations:
     m_keys: 
+    - winnie
     m_values: 
+    - mickey
     
