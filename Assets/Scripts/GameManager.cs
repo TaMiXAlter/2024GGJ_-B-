@@ -80,8 +80,6 @@ public class GameManager : MonoBehaviour
 
                         Debug.Log("Combine: " + result);
                         AudioSystem.instance.PlaySoundEffect("combine");
-
-                        
                     }
                 }
                 draggedItem.GetComponent<ItemMono>().OnPointerUp(new PointerEventData(EventSystem.current));
