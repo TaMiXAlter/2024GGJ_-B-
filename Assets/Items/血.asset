@@ -3,24 +3,23 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: { fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c4c12063bda91247a9644ded558bfb5, type: 3}
-  m_Name: 血
+  m_Name: "\u8840"
   m_EditorClassIdentifier: 
-  Texture: {fileID: 0}
-  Name: 血
+  Texture: {fileID: 21300000, guid: c790eff10ba8b5c4b9364430ece42c6e, type: 3}
+  Name: "\u8840"
   Combinations:
-    m_keys: 
-    - 豆腐
-    - 火鍋
-    - 米
-    m_values: 
-    - 火鍋
-    - 麻辣鴨血
-    - 豬血糕
-    
+    m_keys:
+    - "\u8C46\u8150"
+    - "\u706B\u934B"
+    - "\u7C73"
+    m_values:
+    - "\u706B\u934B"
+    - "\u9EBB\u8FA3\u9D28\u8840"
+    - "\u8C6C\u8840\u7CD5"

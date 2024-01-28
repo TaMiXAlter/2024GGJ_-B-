@@ -3,20 +3,19 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: { fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c4c12063bda91247a9644ded558bfb5, type: 3}
-  m_Name: 咖啡
+  m_Name: "\u5496\u5561"
   m_EditorClassIdentifier: 
-  Texture: {fileID: 0}
-  Name: 咖啡
+  Texture: {fileID: 21300000, guid: be450b2c7a03c6f4b9c6e5d346d80627, type: 3}
+  Name: "\u5496\u5561"
   Combinations:
-    m_keys: 
-    - 奶茶
-    m_values: 
-    - 絲襪奶茶
-    
+    m_keys:
+    - "\u5976\u8336"
+    m_values:
+    - "\u7D72\u896A\u5976\u8336"
