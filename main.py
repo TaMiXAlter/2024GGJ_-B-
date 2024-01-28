@@ -3,7 +3,7 @@ import pandas as pd
 # read translation file
 
 dic = {}
-with open("translate.csv", "r", encoding='utf-8') as f:
+with open("translate.csv", "r", encoding="utf-8") as f:
     for line in f.readlines():
         line = line.strip()
         if line == "":
@@ -42,14 +42,14 @@ for row in df.iterrows():
     com_list_str = ""
     result_list_str = ""
     if len(com_list) != 0:
-        com_list = [""]+com_list
-        result_list = [""]+result_list
+        com_list = [""] + com_list
+        result_list = [""] + result_list
         com_list_str = "\n    - ".join(com_list)
         result_list_str = "\n    - ".join(result_list)
         # print(f"{self_name} - {com_list_str} - {result_list_str}")
-            
+
     #     print(f"{self_name} - {c} - {r}")
-    texture = '{fileID: 0}'
+    texture = "{fileID: 0}"
     try:
         with open(f"Assets/Img/Element/{self_name}.png.meta", "r") as f:
             # read as dict
@@ -78,9 +78,9 @@ for row in df.iterrows():
     m_keys: {com_list_str}
     m_values: {result_list_str}
     """
-    with open(f"Assets/Resources/Item/{self_name}.asset", "w", encoding='utf-8') as f:
+    with open(f"Assets/Resources/Item/{self_name}.asset", "w", encoding="utf-8") as f:
         f.write(info)
-    
+
 
 for row in df.iterrows():
     if row[1]["Name"] not in dic:
@@ -103,5 +103,5 @@ for row in df.iterrows():
                 init_com_list.remove(result_name)
 
 
-with open("Assets/Resources/init_list.txt", mode='w') as f:
-    f.write(" ".join(list(init_com_list)))
+with open("Assets/Resources/init_list.txt", mode="w") as f:
+    f.write("\n".join(list(init_com_list)))

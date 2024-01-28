@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4c12063bda91247a9644ded558bfb5, type: 3}
   m_Name: noodle bread
   m_EditorClassIdentifier: 
-  Texture: {fileID: 0}
+  Texture: {fileID: 21300000, guid: 8e35e6a137149c8428814755a0d724f4, type: 3}
   Name: noodle bread
   Combinations:
     m_keys: 

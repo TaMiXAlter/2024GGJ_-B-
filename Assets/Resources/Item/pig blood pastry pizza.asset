@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4c12063bda91247a9644ded558bfb5, type: 3}
   m_Name: pig blood pastry pizza
   m_EditorClassIdentifier: 
-  Texture: {fileID: 0}
+  Texture: {fileID: 21300000, guid: 5057ab026a9839b4db7478b87ab116da, type: 3}
   Name: pig blood pastry pizza
   Combinations:
     m_keys: 

@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     {
         _initialItem = new List<string>();
         TextAsset initList = Resources.Load<TextAsset>("init_list");
-        string[] lines = initList.text.Split(' ');
+        string[] lines = initList.text.Split('\n');
         foreach (string line in lines)
         {
             _initialItem.Add(line);

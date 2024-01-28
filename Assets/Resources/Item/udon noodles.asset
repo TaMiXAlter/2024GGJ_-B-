@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4c12063bda91247a9644ded558bfb5, type: 3}
   m_Name: udon noodles
   m_EditorClassIdentifier: 
-  Texture: {fileID: 0}
+  Texture: {fileID: 21300000, guid: aceba5994bb284d4fbcc9c0833a704fb, type: 3}
   Name: udon noodles
   Combinations:
     m_keys: 

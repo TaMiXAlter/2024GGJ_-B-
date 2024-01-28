@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4c12063bda91247a9644ded558bfb5, type: 3}
   m_Name: pasta
   m_EditorClassIdentifier: 
-  Texture: {fileID: 0}
+  Texture: {fileID: 21300000, guid: 00fdf623e630e8e48b04b308ba29a42b, type: 3}
   Name: pasta
   Combinations:
     m_keys: 

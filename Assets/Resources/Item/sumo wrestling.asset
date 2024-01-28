@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4c12063bda91247a9644ded558bfb5, type: 3}
   m_Name: sumo wrestling
   m_EditorClassIdentifier: 
-  Texture: {fileID: 0}
+  Texture: {fileID: 21300000, guid: 13615a2ee8265f14390c0168b73eb086, type: 3}
   Name: sumo wrestling
   Combinations:
     m_keys: 
