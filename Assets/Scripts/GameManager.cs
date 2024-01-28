@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,12 +37,9 @@ public class GameManager : MonoBehaviour
         }
 
         //Init _playerHadItme, have basic elemental
-        foreach (var item in _itemPrefab)
-        {
-            _playerHadItme.Add(item.Value.Name);
-        }
+        _playerHadItme.Add("奶茶");
 
-        CreateAllHadItem();
+        ReCreateAllHadItem();
     }
     
     // Update is called once per frame
@@ -66,21 +63,29 @@ public class GameManager : MonoBehaviour
                 var hits = Physics2D.RaycastAll(orig, Vector2.zero);
                 foreach(var hit in hits)
                 {
-                    var hitname = hit.transform.GetComponent<ItemMono>().Item.Name;
+                    var hitIitem = hit.transform.GetComponent<ItemMono>();
                     string result;
-                    if (draggedItem.GetComponent<ItemMono>().Item.Combine(hitname, out result))
+
+                    //Combine
+                    if (hitIitem == null) continue;
+                    if (draggedItem.GetComponent<ItemMono>().Item.Combine(hitIitem.Item.Name, out result) && !hitIitem.IsSelected)
                     {
                         Vector2 middle = (draggedItem.transform.position + hit.transform.position) / 2;
                         var newItem = CreateOnField(result);
                         newItem.transform.position = middle;
                         Destroy(draggedItem);
                         Destroy(hit.transform.gameObject);
+
+                        ReCreateAllHadItem();
+
                         Debug.Log("Combine: " + result);
                         AudioSystem.instance.PlaySoundEffect("combine");
 
                         
                     }
                 }
+                draggedItem.GetComponent<ItemMono>().OnPointerUp(new PointerEventData(EventSystem.current));
+
                 if(draggedItem != null)
                     draggedItem.GetComponent<BoxCollider2D>().enabled = true;
                 draggedItem = null;
@@ -100,8 +105,15 @@ public class GameManager : MonoBehaviour
 
         var obj = Instantiate<ItemMono>(prefab, parent);
         obj.name = itemName;
-        _itemPrefab.TryGetValue(itemName, out obj.Item);
-        obj.gameObject.GetComponent<Image>().sprite = obj.Item.Texture;
+        if(_itemPrefab.TryGetValue(itemName, out obj.Item))
+        {
+            if(obj.Item.Texture != null)
+                obj.gameObject.GetComponent<Image>().sprite = obj.Item.Texture;
+        }
+        else
+        {
+            Debug.Log("No " + itemName);
+        }
         return obj.gameObject;
     }
 
@@ -123,7 +135,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void CreateAllHadItem()
+    private void ReCreateAllHadItem()
     {
         for(; _createdCount < _playerHadItme.Count; _createdCount++)
         {
