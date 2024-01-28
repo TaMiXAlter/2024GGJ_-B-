@@ -21,6 +21,7 @@ public class ItemMono : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             GameManager.instance.BeginDrag(gameObject);
         }
+        AudioSystem.instance.PlaySoundEffect("take");
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -36,6 +37,10 @@ public class ItemMono : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             {
                 GameManager.instance.draggedItem = null;
                 Destroy(gameObject);
+            }
+            else
+            {
+                AudioSystem.instance.PlaySoundEffect("drop");
             }
         }
     }

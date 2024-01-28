@@ -73,10 +73,11 @@ public class GameManager : MonoBehaviour
                         Vector2 middle = (draggedItem.transform.position + hit.transform.position) / 2;
                         var newItem = CreateOnField(result);
                         newItem.transform.position = middle;
-
                         Destroy(draggedItem);
                         Destroy(hit.transform.gameObject);
                         Debug.Log("Combine: " + result);
+                        AudioSystem.instance.PlaySoundEffect("combine");
+
                         
                     }
                 }
