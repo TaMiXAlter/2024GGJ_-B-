@@ -26,13 +26,11 @@ public class StartButton : MonoBehaviour,IPointerEnterHandler,IPointerExitHandle
 
     void GoGamePlay()
     {
-        AudioSystem.instance.PlaySoundEffect("drop");
         SceneManager.LoadScene("TestScene");
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        AudioSystem.instance.PlaySoundEffect("start");
         _animator.SetBool("Hover",true);
     }
 
